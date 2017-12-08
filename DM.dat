@@ -1,0 +1,150 @@
+param: P: person :=
+p1 1
+p2 1
+p3 1
+p4 1
+p5 1;
+
+param: O: supply :=
+o6 11
+o7 15
+o8 16
+o9 18
+o10 16;
+
+param: D: demand :=
+d11 20
+d12 19
+d13 11
+d14 13
+d15 13;
+
+
+
+param: cost:=
+p1 o6 d11 1
+p1 o6 d12 10
+p1 o6 d13 8
+p1 o6 d14 8
+p1 o6 d15 9
+p1 o7 d11 8
+p1 o7 d12 1
+p1 o7 d13 9
+p1 o7 d14 8
+p1 o7 d15 3
+p1 o8 d11 5
+p1 o8 d12 6
+p1 o8 d13 2
+p1 o8 d14 9
+p1 o8 d15 9
+p1 o9 d11 6
+p1 o9 d12 8
+p1 o9 d13 1
+p1 o9 d14 6
+p1 o9 d15 1
+p1 o10 d11 5
+p1 o10 d12 7
+p1 o10 d13 8
+p1 o10 d14 10
+p1 o10 d15 9
+p2 o6 d11 7
+p2 o6 d12 5
+p2 o6 d13 5
+p2 o6 d14 3
+p2 o6 d15 10
+p2 o7 d11 8
+p2 o7 d12 2
+p2 o7 d13 2
+p2 o7 d14 6
+p2 o7 d15 7
+p2 o8 d11 7
+p2 o8 d12 8
+p2 o8 d13 6
+p2 o8 d14 2
+p2 o8 d15 8
+p2 o9 d11 10
+p2 o9 d12 5
+p2 o9 d13 1
+p2 o9 d14 8
+p2 o9 d15 3
+p2 o10 d11 5
+p2 o10 d12 4
+p2 o10 d13 2
+p2 o10 d14 5
+p2 o10 d15 8
+p3 o6 d11 7
+p3 o6 d12 4
+p3 o6 d13 3
+p3 o6 d14 8
+p3 o6 d15 5
+p3 o7 d11 8
+p3 o7 d12 9
+p3 o7 d13 10
+p3 o7 d14 4
+p3 o7 d15 8
+p3 o8 d11 1
+p3 o8 d12 6
+p3 o8 d13 10
+p3 o8 d14 1
+p3 o8 d15 3
+p3 o9 d11 6
+p3 o9 d12 1
+p3 o9 d13 1
+p3 o9 d14 10
+p3 o9 d15 5
+p3 o10 d11 7
+p3 o10 d12 7
+p3 o10 d13 6
+p3 o10 d14 8
+p3 o10 d15 2
+p4 o6 d11 7
+p4 o6 d12 2
+p4 o6 d13 8
+p4 o6 d14 2
+p4 o6 d15 10
+p4 o7 d11 4
+p4 o7 d12 3
+p4 o7 d13 4
+p4 o7 d14 9
+p4 o7 d15 7
+p4 o8 d11 7
+p4 o8 d12 5
+p4 o8 d13 5
+p4 o8 d14 9
+p4 o8 d15 8
+p4 o9 d11 1
+p4 o9 d12 5
+p4 o9 d13 4
+p4 o9 d14 2
+p4 o9 d15 1
+p4 o10 d11 9
+p4 o10 d12 10
+p4 o10 d13 9
+p4 o10 d14 4
+p4 o10 d15 8
+p5 o6 d11 10
+p5 o6 d12 6
+p5 o6 d13 7
+p5 o6 d14 7
+p5 o6 d15 8
+p5 o7 d11 3
+p5 o7 d12 8
+p5 o7 d13 5
+p5 o7 d14 4
+p5 o7 d15 9
+p5 o8 d11 7
+p5 o8 d12 6
+p5 o8 d13 6
+p5 o8 d14 1
+p5 o8 d15 8
+p5 o9 d11 2
+p5 o9 d12 10
+p5 o9 d13 4
+p5 o9 d14 1
+p5 o9 d15 6
+p5 o10 d11 5
+p5 o10 d12 2
+p5 o10 d13 3
+p5 o10 d14 10
+p5 o10 d15 2
+;

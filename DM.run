@@ -1,0 +1,11 @@
+reset;
+
+model project_LR/DM.mod;
+data project_LR/DM.dat;
+
+option solver cplex;
+solve;
+
+for{i in P, j in O, k in D}{
+printf"%s\t%s\t%s\t%d\n",i,j,k,y[i,j,k]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM.txt");
+}
