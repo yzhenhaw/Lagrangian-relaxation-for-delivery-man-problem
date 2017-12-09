@@ -1,0 +1,23 @@
+reset;
+
+model project_LR/DM1.mod;
+data project_LR/DM1.dat;
+
+option solver cplex;
+solve;
+
+for{i in P, j in O}{
+printf"%s\t%s\t%d\n",i,j,ypo[i,j]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1.txt");
+}
+
+for{j in O, k in D}{
+printf"%s\t%s\t%d\n",j,k,yod[j,k]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1.txt");
+}
+
+for{k in D,j in O}{
+printf"%s\t%s\t%d\n",k,j,ydo[k,j]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1.txt");
+}
+
+for{k in D,i in P}{
+printf"%s\t%s\t%d\n",k,i,ydp[k,i]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1.txt");
+}

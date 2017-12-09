@@ -1,0 +1,134 @@
+param: P: person :=
+p1 1
+p2 1
+p3 1
+p4 1
+p5 1;
+
+param: O: supply :=
+o1 3
+o2 1
+o3 2
+o4 1
+o5 1;
+
+param: D: demand :=
+d1 1
+d2 3
+d3 1
+d4 2
+d5 1;
+
+
+
+param: costpo:=
+p1 o1 3
+p1 o2 1
+p1 o3 9
+p1 o4 13
+p1 o5 10
+p2 o1 8
+p2 o2 11
+p2 o3 5
+p2 o4 10
+p2 o5 1
+p3 o1 3
+p3 o2 7
+p3 o3 14
+p3 o4 12
+p3 o5 10
+p4 o1 7
+p4 o2 14
+p4 o3 5
+p4 o4 10
+p4 o5 13
+p5 o1 13
+p5 o2 3
+p5 o3 2
+p5 o4 7
+p5 o5 1
+;
+
+param: costdp:=
+d1 p1 13
+d1 p2 9
+d1 p3 5
+d1 p4 14
+d1 p5 11
+d2 p1 7
+d2 p2 3
+d2 p3 15
+d2 p4 7
+d2 p5 8
+d3 p1 14
+d3 p2 5
+d3 p3 9
+d3 p4 15
+d3 p5 10
+d4 p1 2
+d4 p2 14
+d4 p3 12
+d4 p4 11
+d4 p5 14
+d5 p1 15
+d5 p2 9
+d5 p3 10
+d5 p4 10
+d5 p5 15
+;
+
+param: costod:=
+o1 d1 10
+o1 d2 3
+o1 d3 4
+o1 d4 3
+o1 d5 13
+o2 d1 6
+o2 d2 1
+o2 d3 3
+o2 d4 14
+o2 d5 8
+o3 d1 13
+o3 d2 12
+o3 d3 11
+o3 d4 7
+o3 d5 13
+o4 d1 4
+o4 d2 12
+o4 d3 2
+o4 d4 10
+o4 d5 12
+o5 d1 10
+o5 d2 15
+o5 d3 11
+o5 d4 14
+o5 d5 7
+;
+
+param: costdo:=
+d1 o1 4
+d1 o2 4
+d1 o3 10
+d1 o4 4
+d1 o5 5
+d2 o1 13
+d2 o2 4
+d2 o3 14
+d2 o4 6
+d2 o5 12
+d3 o1 8
+d3 o2 8
+d3 o3 15
+d3 o4 7
+d3 o5 5
+d4 o1 13
+d4 o2 14
+d4 o3 12
+d4 o4 11
+d4 o5 5
+d5 o1 10
+d5 o2 6
+d5 o3 14
+d5 o4 15
+d5 o5 4
+;
