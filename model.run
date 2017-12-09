@@ -1,0 +1,22 @@
+reset;
+model project/model.mod;
+data project/data.dat;
+
+option solver cplex;
+solve;
+
+for{i in P, j in O}{
+printf"%s\t%s\t%d\n",i,j,x1[i,j]>("F:\AMPL\project\r4.txt");
+}
+
+for{j in O, k in D}{
+printf"%s\t%s\t%d\n",j,k,x2[j,k]>("F:\AMPL\project\r4.txt");
+}
+
+for{k in D,j in O}{
+printf"%s\t%s\t%d\n",k,j,x3[k,j]>("F:\AMPL\project\r4.txt");
+}
+
+for{k in D,i in P}{
+printf"%s\t%s\t%d\n",k,i,x4[k,i]>("F:\AMPL\project\r4.txt");
+}

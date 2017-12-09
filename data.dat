@@ -1,25 +1,25 @@
-param: P:person:=
-p0 3
-p1 8
-p2 6
-p3 10
-p4 1
+param : P:person:=
+p1 6
+p2 10
+p3 12
+p4 12
+p5 7;
 
-param: O:supply:=
-o0 19
-o1 16
-o2 17
-o3 13
-o4 17;
+param : O:supply:=
+o6 19
+o7 16
+o8 17
+o9 13
+o10 17;
 
-param: D:demand:=
-d0 18
-d1 12
-d2 20
-d3 16
-d4 16;
+param : D:demand:=
+d11 18
+d12 12
+d13 20
+d14 16
+d15 16;
 
-param :cost:=
+param : cost1:=
 p1 o6 3
 p1 o7 7
 p1 o8 4
@@ -44,7 +44,9 @@ p5 o6 6
 p5 o7 6
 p5 o8 5
 p5 o9 7
-p5 o10 10
+p5 o10 10;
+
+param : cost2:=
 o6 d11 5
 o6 d12 10
 o6 d13 5
@@ -69,7 +71,9 @@ o10 d11 3
 o10 d12 1
 o10 d13 6
 o10 d14 1
-o10 d15 6
+o10 d15 6;
+
+param : cost3:=
 d11 o6 6
 d11 o7 4
 d11 o8 5
@@ -94,7 +98,9 @@ d15 o6 6
 d15 o7 9
 d15 o8 1
 d15 o9 10
-d15 o10 6
+d15 o10 6;
+
+param : cost4:=
 d11 p1 6
 d11 p2 4
 d11 p3 1
