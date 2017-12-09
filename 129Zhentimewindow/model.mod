@@ -70,10 +70,10 @@ to[j]+timeod[j,k]-td[k]<=(dub[k]+timeod[j,k]-dlb[k])*(1-x2[j,k]);
 subject to origin_time_lb{j in O}:
 to[j]>=olb[j];
 
-subject to demand_time_ub{j in O}:
+subject to origin_time_ub{j in O}:
 to[j]<=oub[j];
 
-subject to demand_time{k in D, j in O}:
+subject to origin_time{k in D, j in O}:
 td[k]+timedo[k,j]-to[j]<=(oub[j]+timedo[k,j]-olb[j])*(1-x3[k,j]);
 
 #subject to Capacity{j in O,k in D}:
