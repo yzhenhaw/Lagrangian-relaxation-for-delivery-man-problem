@@ -1,0 +1,90 @@
+reset;
+
+model .../node60_LR.mod;
+data .../node60.dat;
+
+
+option solver cplex;
+objective Total_Cost;
+solve;
+
+##############http://www.ampl.com/NEW/LOOP2/ please see some reference here.
+
+param LB; param UB;
+let LB := Total_Cost.val;
+let UB := 1000;##set a huge upper bound
+
+#set two problem, pick up the variable constraint and objective function
+problem LowerBound:ypo,yod,ydo,ydp,to,td,Supply_con,Demand_con,Person_con,Person_out_con,Demand_out_con,Supply_out_con,demand_time_lb,demand_time_ub,origin_time_lb,origin_time_ub,origin_time,Total_Cost_LR;
+problem UpperBound:ypo,yod,ydo,ydp,to,td,Supply_con,Demand_con,Person_con,Person_out_con,Demand_out_con,Supply_out_con,demand_time_lb,demand_time_ub,origin_time_lb,origin_time_ub,origin_time,demand_time,Total_Cost;
+
+let {j in O, k in D} mult[j,k] := 0;
+
+param slack{O,D};
+param scale  default 1;
+
+
+param norm;
+param step;
+
+param same  default 0;
+param same_limit := 3;
+
+param iter_limit := 20;
+param LBlog {0..iter_limit};  let LBlog[0] := LB;
+param UBlog {0..iter_limit};  let UBlog[0] := UB;
+param scalelog {1..iter_limit};
+param steplog {1..iter_limit};
+
+for {m in 1..iter_limit} { printf "\nITERATION %d\n\n", m;
+   solve LowerBound;
+
+   let {j in O, k in D} slack[j,k] := to[j]+timeod[j,k]-td[k]-(dub[k]+timeod[j,k]-dlb[k])*(1-yod[j,k]);
+	
+
+   if Total_Cost_LR > LB + 0.000001 then {
+      let LB := Total_Cost_LR;
+      let same := 0; }
+   else let same := same + 1;
+
+   if same = same_limit then {
+      let scale := scale / 2;
+      let same := 0;
+      };
+
+   let norm := sum {j in O} sum{k in D} slack[j,k]^2;
+   
+   let step := scale * (UB - Total_Cost_LR) / norm;
+
+   let {j in O, k in D} mult[j,k] := mult[j,k] less step * slack[j,k];
+
+
+   solve UpperBound;
+   let UB := min (UB, Total_Cost);
+
+
+   let LBlog[m] := LB;
+   let UBlog[m] := UB;
+   let scalelog[m] := scale;
+   let steplog[m] := step;
+   }
+
+for{i in P, j in O}{
+printf"%s\t%s\t%d\n",i,j,ypo[i,j]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1_LR.txt");
+}
+
+for{j in O, k in D}{
+printf"%s\t%s\t%d\n",j,k,yod[j,k]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1_LR.txt");
+}
+
+for{k in D,j in O}{
+printf"%s\t%s\t%d\n",k,j,ydo[k,j]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1_LR.txt");
+}
+
+for{k in D,i in P}{
+printf"%s\t%s\t%d\n",k,i,ydp[k,i]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1_LR.txt");
+}
+
+for{k in D}{
+printf"%s\t%d\n",k,td[k]>("D:\2017phd\2017fall\large scale optim\project\code\Lagrangian-relaxation-for-delivery-man-problem\DM1_LR.txt");
+}
