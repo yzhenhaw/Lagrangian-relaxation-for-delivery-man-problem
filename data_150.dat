@@ -1,5 +1,4 @@
 param: P: person :=
-p0 1
 p1 1
 p2 1
 p3 1
@@ -49,6 +48,7 @@ p46 1
 p47 1
 p48 1
 p49 1
+p50 1
 ;
 param: O: supply :=
 o51 3
