@@ -1,0 +1,216 @@
+param: P: person :=
+p1 1
+p2 1
+p3 1
+p4 1
+p5 1;
+
+param: O: supply :=
+o6 1
+o7 2
+o8 1
+o9 1
+o10 1;
+
+param: D: demand :=
+d11 1
+d12 1
+d13 1
+d14 2
+d15 1;
+
+param : olb:=
+o6 1
+o7 1
+o8 1
+o9 1
+o10 1;
+
+param : oub:=
+o6 100
+o7 100
+o8 100
+o9 100
+o10 100;
+
+param : dlb:=
+d11 6
+d12 3
+d13 7
+d14 2
+d15 6;
+
+param : dub:=
+d11 30
+d12 28
+d13 27
+d14 26
+d15 30;
+
+param : timeod:=
+o6 d11 12
+o6 d12 17
+o6 d13 18
+o6 d14 8
+o6 d15 5
+o7 d11 20
+o7 d12 20
+o7 d13 18
+o7 d14 7
+o7 d15 7
+o8 d11 10
+o8 d12 19
+o8 d13 14
+o8 d14 5
+o8 d15 5
+o9 d11 18
+o9 d12 15
+o9 d13 9
+o9 d14 7
+o9 d15 10
+o10 d11 7
+o10 d12 19
+o10 d13 7
+o10 d14 10
+o10 d15 15
+;
+
+param : timedo:=
+d11 o6 7
+d11 o7 9
+d11 o8 5
+d11 o9 18
+d11 o10 12
+d12 o6 9
+d12 o7 7
+d12 o8 19
+d12 o9 12
+d12 o10 6
+d13 o6 15
+d13 o7 14
+d13 o8 8
+d13 o9 16
+d13 o10 9
+d14 o6 14
+d14 o7 15
+d14 o8 17
+d14 o9 10
+d14 o10 19
+d15 o6 9
+d15 o7 19
+d15 o8 18
+d15 o9 10
+d15 o10 7
+;
+
+param: costpo:=
+p1 o6 3
+p1 o7 1
+p1 o8 9
+p1 o9 13
+p1 o10 10
+p2 o6 8
+p2 o7 11
+p2 o8 5
+p2 o9 10
+p2 o10 1
+p3 o6 3
+p3 o7 7
+p3 o8 14
+p3 o9 12
+p3 o10 10
+p4 o6 7
+p4 o7 14
+p4 o8 5
+p4 o9 10
+p4 o10 13
+p5 o6 13
+p5 o7 3
+p5 o8 2
+p5 o9 7
+p5 o10 1
+;
+
+param: costdp:=
+d11 p1 13
+d11 p2 9
+d11 p3 5
+d11 p4 14
+d11 p5 11
+d12 p1 7
+d12 p2 3
+d12 p3 15
+d12 p4 7
+d12 p5 8
+d13 p1 14
+d13 p2 5
+d13 p3 9
+d13 p4 15
+d13 p5 10
+d14 p1 2
+d14 p2 14
+d14 p3 12
+d14 p4 11
+d14 p5 14
+d15 p1 15
+d15 p2 9
+d15 p3 10
+d15 p4 10
+d15 p5 15
+;
+
+param: costod:=
+o6 d11 10
+o6 d12 3
+o6 d13 4
+o6 d14 3
+o6 d15 13
+o7 d11 6
+o7 d12 1
+o7 d13 3
+o7 d14 14
+o7 d15 8
+o8 d11 13
+o8 d12 12
+o8 d13 11
+o8 d14 7
+o8 d15 13
+o9 d11 4
+o9 d12 12
+o9 d13 2
+o9 d14 10
+o9 d15 12
+o10 d11 10
+o10 d12 15
+o10 d13 11
+o10 d14 14
+o10 d15 7
+;
+
+param: costdo:=
+d11 o6 4
+d11 o7 4
+d11 o8 10
+d11 o9 4
+d11 o10 5
+d12 o6 13
+d12 o7 4
+d12 o8 14
+d12 o9 6
+d12 o10 12
+d13 o6 8
+d13 o7 8
+d13 o8 15
+d13 o9 7
+d13 o10 5
+d14 o6 13
+d14 o7 14
+d14 o8 12
+d14 o9 11
+d14 o10 5
+d15 o6 10
+d15 o7 6
+d15 o8 14
+d15 o9 15
+d15 o10 4
+;

@@ -13,12 +13,19 @@ param cost1{P,O} >=0;#shipment cost
 param cost2{O,D} >=0;#shipment cost
 param cost3{D,O} >=0;#shipment cost
 param cost4{D,P} >=0;#shipment cost
-
+param olb{O}>=0;
+param oub{O}>=0;
+param dlb{D}>=0;
+param dub{D}>=0;
+param timeod{O,D}>=0;
+param timedo{D,O}>=0;
 
 var x1{P,O}>=0;#decision variable
 var x2{O,D}>=0;#decision variable
 var x3{D,O}>=0;#decision variable
 var x4{D,P}>=0;#decision variable
+var to{O}>=0;
+var td{D}>=0;
 
 
 minimize Total_Cost: 
@@ -49,14 +56,30 @@ sum{j in O}x3[k,j]<=sum{j in O}x2[j,k];
 subject to demand_out{k in D}:
 sum{j in O}x2[j,k]=sum{i in P}x4[k,i]+sum{j in O}x3[k,j];
 
+#time window
 
+subject to demand_time_lb{k in D}:
+td[k]>=dlb[k];
 
+subject to demand_time_ub{k in D}:
+td[k]<=dub[k];
 
+subject to demand_time{j in O, k in D}:
+to[j]+timeod[j,k]-td[k]<=(dub[k]+timeod[j,k]-dlb[k])*(1-x2[j,k]);
 
-subject to Capacity{j in O,k in D}:
-x2[j,k]<=30;
-subject to Capacity2{j in O,k in D}:
-x3[k,j]<=30;
+subject to origin_time_lb{j in O}:
+to[j]>=olb[j];
+
+subject to demand_time_ub{j in O}:
+to[j]<=oub[j];
+
+subject to demand_time{k in D, j in O}:
+td[k]+timedo[k,j]-to[j]<=(oub[j]+timedo[k,j]-olb[j])*(1-x3[k,j]);
+
+#subject to Capacity{j in O,k in D}:
+#x2[j,k]<=30;
+#subject to Capacity2{j in O,k in D}:
+#x3[k,j]<=30;
 
 
 
