@@ -7,7 +7,7 @@ p5 1;
 
 param: O: supply :=
 o6 1
-o7 2
+o7 1
 o8 1
 o9 1
 o10 1;
@@ -16,7 +16,7 @@ param: D: demand :=
 d11 1
 d12 1
 d13 1
-d14 2
+d14 1
 d15 1;
 
 param : olb:=
@@ -41,11 +41,12 @@ d14 2
 d15 6;
 
 param : dub:=
-d11 30
-d12 28
-d13 27
-d14 26
-d15 30;
+d11	18
+d12	23
+d13	16
+d14	19
+d15	20
+;
 
 param : timeod:=
 o6 d11 12
